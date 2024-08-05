@@ -1,0 +1,20 @@
+{
+  "short_name": "Crecimiento Rodeo",
+  "name": "Crecimiento Rodeo Lechero",
+  "icons": [
+    {
+      "src": "IsotipoAZUL-favicon",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "IsotipoAZUL",
+      "type": "image/png",
+      "sizes": "473x331"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
