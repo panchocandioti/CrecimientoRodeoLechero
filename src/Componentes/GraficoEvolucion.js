@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import LogoMiLecheria from '../Media/Imagotipo AZUL.png';
 import jsPDF from 'jspdf';
 import {
     Chart as ChartJS,
@@ -89,19 +90,22 @@ function GraficoEvolucion(props) {
             if (chartImageBase64 && chartImageBase64.startsWith('data:image/png')) {
                 const pdf = new jsPDF();
 
+            //Agrega logo
+            pdf.addImage(LogoMiLecheria, 'PNG', 65, 12, 80, 9);
+            
             // Agrega título
             pdf.setFontSize(15);
-            pdf.text(nombreCaso, 15, 20);
+            pdf.text(nombreCaso, 15, 35);
 
             pdf.setFontSize(12);
-            pdf.text("GRÁFICO - Evolución comparada - Crecimiento del rodeo lechero - " + fechaString, 15, 30);
+            pdf.text("GRÁFICO - Evolución comparada - Crecimiento del rodeo lechero - " + fechaString, 15, 45);
 
             // Agrega la imagen del gráfico
-            pdf.addImage(chartImageBase64, 'PNG', 15, 40, 180, 80); // A4 size: 210mm x 297mm
+            pdf.addImage(chartImageBase64, 'PNG', 15, 55, 180, 80); // A4 size: 210mm x 297mm
 
             // Agrega pie de página
             pdf.setFontSize(10);
-            pdf.text("Desarrollado por: Ing. Agr. EPL Francisco Candioti - panchocandioti@gmail.com - MiLecheria.ar", 15, 135);
+            pdf.text("Desarrollado por: Ing. Agr. EPL Francisco Candioti - panchocandioti@gmail.com - MiLecheria.ar", 15, 150);
 
             pdf.save('GraficoEvolucion.pdf');
             } else {

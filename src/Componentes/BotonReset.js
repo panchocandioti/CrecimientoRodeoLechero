@@ -4,11 +4,14 @@ import React from 'react';
 
 function BotonReset() {
   const recargaPagina = () => {
-    window.location.reload();
+    const isConfirmed = window.confirm('¿Está seguro de reiniciar la aplicación? (se perderá lo hecho hasta aquí)');
+    if (isConfirmed) {
+      window.location.reload();
+    }
   };
 
   return (
-    <button className="button" onClick={recargaPagina}>RESET</button>
+    <button className="button" onClick={recargaPagina}>REINICIAR</button>
   );
 }
 

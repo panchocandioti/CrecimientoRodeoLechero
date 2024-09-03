@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
+import LogoMiLecheria from "../Media/Imagotipo AZUL.png";
 
 const styles = StyleSheet.create({
     table: {
@@ -7,7 +8,14 @@ const styles = StyleSheet.create({
         margin: '5px 20px 5px',
         border: '1px solid #000',
         fontFamily: 'Helvetica',
-        fontSize: '10',
+        fontSize: '9',
+    },
+    tableLogos: {
+        width: '36%',
+        height: '8%',
+        marginTop: '1%',
+        marginLeft: '32.5%',
+        border: 'none',
     },
     tableRow: {
         flexDirection: 'row',
@@ -15,24 +23,30 @@ const styles = StyleSheet.create({
     tableCell: {
         flex: 1,
         border: '1px solid #000',
-        padding: 5,
+        padding: 4,
+        textAlign: 'center',
+    },
+    tableCellLogos: {
+        flex: 1,
+        border: 'none',
+        padding: 4,
         textAlign: 'center',
     },
     title1: {
         textAlign: 'center',
         marginTop: '30px',
         fontWeight: 'bold',
-        fontSize: '15',
+        fontSize: '14',
     },
     title2: {
         textAlign: 'center',
         marginTop: '4px',
         fontWeight: 'bold',
-        fontSize: '12',
+        fontSize: '10',
     },
     footer: {
         textAlign: 'center',
-        fontSize: '10',
+        fontSize: '9',
     },
 });
 
@@ -80,6 +94,13 @@ function ReportePDF(props) {
         <Document>
             <Page size="A4" orientation='landscape'>
                 <View>
+                    <View style={styles.tableLogos}>
+                        <View style={styles.tableRow}>
+                            <View style={styles.tableCellLogos}>
+                                <Image src={LogoMiLecheria}></Image>
+                            </View>
+                        </View>
+                    </View>
                     <Text style={styles.title1}>{nombreCaso}</Text>
                     <Text style={styles.title2}>REPORTE - Comparación de estados - Crecimiento del rodeo lechero - {fechaString}</Text>
                     <View style={styles.table}>
