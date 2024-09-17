@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import IngresoDatos from './IngresoDatos';
 import ImagotipoBlanco from "../Media/Imagotipo BLANCO.png";
 import LogoSaltoAgro from "../Media/LogoSaltoAgro.png"
+import LogoUNLFCA from "../Media/logo-UNL-FCA.png";
 
 function Presentacion() {
 
@@ -140,10 +141,17 @@ function Presentacion() {
                 <div>
                     <p><b>Desarrollador:</b></p>
                     <p><b><a href='https://www.linkedin.com/in/francisco-candioti-0b167834/' target="_blank" rel="noopener noreferrer">Ing. Agr. EPL Francisco Candioti</a></b></p>
-                    <p><a href='mailto:panchocandioti@gmail.com'>panchocandioti@gmail.com</a></p>
+                    <hr></hr>
+                    <p>Convenio Marco de Cooperación Técnico-Científica:</p>
+                    <p><b>Universidad Nacional del Litoral - SALTO AGRO S.S.</b></p>
                 </div>
                 <div className='containerLogos'>
-                    <a href='https://saltoagro.ar' target="_blank" rel="noopener noreferrer"><img src={LogoSaltoAgro} className='logo' alt='LogoSalto'></img></a>
+                    <div className='logos'>
+                        <img src={LogoSaltoAgro} className='logo' alt='LogoSalto'></img>
+                    </div>
+                    <div className='logos'>
+                        <img src={LogoUNLFCA} className='logo' alt='LogoUNLFCA'></img>
+                    </div>
                 </div>
             </footer>
         </div>
